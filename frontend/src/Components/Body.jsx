@@ -84,7 +84,7 @@ export default function Body() {
           {/* Avatar + Textarea */}
           <div className="flex gap-4">
             <div className="w-[40px] h-[40px] rounded-full bg-[#9b87f5] text-sm flex items-center justify-center text-white font-bold cursor-pointer">
-            {user.username.charAt(0)}
+            {user ? user.username.charAt(0) : 'U'}
             </div>
             <textarea
               ref={textareaRef}
