@@ -36,7 +36,7 @@ export default function Header() {
             className="w-[30px] h-[30px] rounded-full bg-[rgb(155,135,245)] flex items-center justify-center cursor-pointer relative"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
-            <p className="text-white font-semibold text-xs">{user.username.charAt(0)}</p>
+            <p className="text-white font-semibold text-xs">{user ? user.username.charAt(0) : 'U'}</p>
 
             {/* Dropdown */}
             {dropdownOpen && (
