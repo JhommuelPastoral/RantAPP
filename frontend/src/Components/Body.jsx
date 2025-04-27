@@ -13,9 +13,7 @@ export default function Body() {
   const backUrl = import.meta.env.VITE_BACKEND_URL;
   const [message, setMessage] = useState('');
   const [rants, setRants] = useState([]); // State to hold the rants
-  const [loading, setLoading] = useState(true); // Loading state
-  const { user } = useContext(userContext);
-  
+  const {user} = useContext(userContext);
   // Initialize Socket.IO client
   const socket = useRef(null);
 
@@ -48,13 +46,6 @@ export default function Body() {
     };
   }, []); // Empty dependency array means it only runs once when the component mounts
 
-  useEffect(() => {
-    // Set loading to false when user data is available
-    if (user !== null) {
-      setLoading(false);
-    }
-  }, [user]);
-
   const handleInput = () => {
     const textarea = textareaRef.current;
     if (textarea) {
@@ -85,15 +76,6 @@ export default function Body() {
     }
   };
 
-  // If loading, display a loading message or spinner
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <div>Loading...</div> {/* Or use a spinner here */}
-      </div>
-    );
-  }
-
   return (
     <main className="pt-[70px] font-Poppins bg-[#f9fafb] min-h-screen px-4">
       <div className="max-w-[700px] mx-auto flex flex-col gap-6">
@@ -102,7 +84,7 @@ export default function Body() {
           {/* Avatar + Textarea */}
           <div className="flex gap-4">
             <div className="w-[40px] h-[40px] rounded-full bg-[#9b87f5] text-sm flex items-center justify-center text-white font-bold cursor-pointer">
-              {user.username.charAt(0)}
+            {user.username.charAt(0)}
             </div>
             <textarea
               ref={textareaRef}
