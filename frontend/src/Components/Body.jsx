@@ -56,8 +56,9 @@ export default function Body() {
 
   const handleSubmit = async () => {
     try {
+
       const rant = {
-        name: user.username,
+        name: "Anonymous",
         message,
         date: dayjs().format('MMM D, YYYY'),  // Date format
         time: dayjs().format('hh:mm:ss A')              // Relative time format (e.g. "a few seconds ago")
