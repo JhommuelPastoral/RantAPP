@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { userContext } from '../../context/userContext';
+import { useNavigate } from 'react-router-dom'
 
 export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
