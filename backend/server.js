@@ -16,14 +16,14 @@ const server = http.createServer(app);
 // Initialize Socket.IO with the server
 const io = new Server(server, {
   cors: {
-    origin: 'https://rantapp.onrender.com',  // Replace with your frontend URL
+    origin: 'https://rant-0l5u.onrender.com',  // Replace with your frontend URL
     methods: ['GET', 'POST'],
     credentials: true,
   },
 });
 
 app.use(cors({
-  origin: 'https://rantapp.onrender.com',  // Replace with your frontend URL
+  origin: 'https://rant-0l5u.onrender.com',  // Replace with your frontend URL
   credentials: true,
 }));
 app.use(express.json());
